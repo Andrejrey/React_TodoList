@@ -1,42 +1,258 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: solid 1px; */
+    
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.update-buttons {
+    display: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+header {
+    background-color: #468189;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border-radius: 0px 0px 100px 100px;
+}
+
+#headerIcon {
+    color: white; 
+    margin-left: 15px;
+    font-size: 30px;
+    height: 30px;
+}
+
+body {
+    background-color: #031926 ;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    background-color: #468189;
+    margin-top: 30px;
+    border-radius: 30px;
+
+}
+
+.todo-input {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-self: start;
+}
+
+#plus {
+    width: 40px;
+    background-color: #F4E9CD;
+    border-radius: 0px 30px 30px 0px;
+    border: none;
+}
+
+#plus:hover {
+    background-color: #9DBEBB;
+}
+
+#enter {
+    height: 40px;
+    border-radius: 30px 0px 0px 30px;
+    border: none;
+    width: 450px;
+}
+
+input {
+    padding-left: 15px
+}
+
+.checkedDone {
+    width: 25px;  
+    accent-color: #F4E9CD;
+}
+
+p {
+    color: #F4E9CD;
+    font-weight: 400;
+    align-self: center;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+    border-top: 1px solid #F4E9CD;
+}
+
+.edit {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F4E9CD;
+}
+
+.delete {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F4E9CD;
+}
+
+.edit:hover {
+    background-color: #9DBEBB;
+}
+
+.delete:hover {
+    background-color: #9DBEBB;
+}
+
+
+.beide-button {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+#save {
+    width: 100px;
+    height: 30px;
+    background-color: #F4E9CD;
+    border: none;
+    border-radius: 30px;
+    color: #468189;
+    font-weight: bold;
+}
+
+#save:hover {
+    background-color: #9DBEBB ;
+}
+
+#cancel {
+    width: 100px;
+    height: 30px;
+    background-color: #F4E9CD;
+    border: none;
+    border-radius: 30px;
+    color: #468189;
+    font-weight: bold;
+}
+
+#cancel:hover {
+    background-color: #9DBEBB ;
+}
+
+i {
+    color: #468189;
+}
+
+textarea:disabled {
+    resize: none;
+    background-color: #468189;
+    border: none;
+    color: #F4E9CD;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 500px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+    min-width: 500px;
+    border-radius: 30px;
+    border: 3px solid #9DBEBB;
+    text-align: center;
+}
+
+#clear {
+    border: none;
+    background-color: #F4E9CD;
+    border-radius: 0px 0px 15px 15px;
+    color: #468189;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#clear:hover {
+    background-color: #9DBEBB;
+}
+
+#message{
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: -15px;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 960px) {
+    .tasks {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .update-buttons {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .edit-buttons {
+        padding: 10px 10px 0px 10px;
+    }
+    
+    textarea {
+        min-width: 220px;
+        text-align: center;
+    }
+
+    textarea:disabled {
+        min-width: 220px;
+    }
+
+    .checkedDone {
+        margin-bottom: 15px;
+    }
+
+    .edit {
+        margin-right: 40px;
+    }
+
+    #save {
+        margin-right: 5px;
+    }
+
+    #message {
+        padding: 10px;
+    }
+
+    #save {
+        width: 80px;
+    }
+
+    #cancel {
+        width: 80px;
+    }
+
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
