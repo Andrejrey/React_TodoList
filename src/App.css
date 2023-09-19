@@ -42,11 +42,7 @@ main {
   flex-direction: column;
   width: 90vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: linear-gradient(
-    90deg,
-    rgba(34, 193, 195, 1) 30%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  background: #22c1c3;
   border-radius: 15px;
   align-self: center;
   margin-bottom: 30px;
@@ -281,11 +277,11 @@ input {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 30px;
-  color: #fdbb2d;
+  color: white;
   font-size: large;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: white;
+  background-color: #22c1c3;
   width: 80vw;
   min-height: 60px;
   margin-top: 30px;
