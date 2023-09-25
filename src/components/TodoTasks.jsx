@@ -2,7 +2,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import SaveIcon from "@mui/icons-material/Save";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 export default function TodoTasks({
   task,
@@ -12,9 +12,11 @@ export default function TodoTasks({
   editTask,
   title,
   setTitle,
+  setMessage,
 }) {
-  const inputRef = useRef();
+  // const inputRef = useRef();
   function handleEditedTask() {
+    setMessage(false);
     if (title === "") {
       setTitle(title, task.id);
       setTitle("");
@@ -24,11 +26,9 @@ export default function TodoTasks({
     }
   }
 
-  function onEditFocus() {
-    inputRef.current.focus();
+  function onEditMessage() {
+    setMessage(false);
   }
-
-  console.log(inputRef.current);
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function TodoTasks({
           {task.done ? <CheckCircleIcon /> : <div />}
         </button>
         <p
-          ref={inputRef}
+          // ref={inputRef}
           onInput={(event) => setTitle(event.currentTarget.textContent)}
           contentEditable={task.edit ? true : false}
           className={
@@ -51,16 +51,12 @@ export default function TodoTasks({
             {task.edit ? (
               <SaveIcon onClick={handleEditedTask} />
             ) : (
-              <EditIcon onClick={onEditFocus} />
+              <EditIcon onClick={onEditMessage} />
             )}
           </button>
           <button onClick={() => onDelete(task.id)} className="delete">
             <DeleteForeverIcon />
           </button>
-        </div>
-        <div className="update-buttons">
-          <button id="save">Save</button>
-          <button id="cancel">Cancel</button>
         </div>
       </div>
     </>

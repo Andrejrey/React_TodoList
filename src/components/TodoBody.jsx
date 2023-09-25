@@ -12,9 +12,10 @@ export default function TodoBody({
   onEdit,
   editTask,
   onFilter,
+  setMessage,
+  message,
 }) {
   const [title, setTitle] = useState("");
-  const [message, setMessage] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -34,7 +35,7 @@ export default function TodoBody({
   return (
     <>
       <main>
-        <TaskStats task={task} onFilter={onFilter} />
+        <TaskStats task={task} onFilter={onFilter} setMessage={setMessage} />
         <div className="container">
           <form onSubmit={handleSubmit} className="todo-input">
             <input
@@ -65,6 +66,7 @@ export default function TodoBody({
                   editTask={editTask}
                   title={title}
                   setTitle={setTitle}
+                  setMessage={setMessage}
                 />
               );
             })}
