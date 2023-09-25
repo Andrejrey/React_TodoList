@@ -13,23 +13,22 @@
 header {
   background: linear-gradient(
     90deg,
-    rgba(34, 193, 195, 1) 30%,
-    rgba(253, 187, 45, 1) 100%
+    rgba(5, 177, 207, 1) 0%,
+    rgba(57, 126, 240, 1) 100%
   );
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80px;
-  border-radius: 0px 0px 15px 15px;
-  width: 90vw;
+  width: 50vw;
+  border-radius: 0 0 15px 15px;
 }
 
 body {
   display: flex;
   justify-content: center;
-  background-color: rgb(244, 243, 243);
+  background: #f2f2f2;
 }
 
 main {
@@ -40,10 +39,9 @@ main {
 .container {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: #22c1c3;
-  border-radius: 15px;
+  width: 50vw;
+  background: white;
+  border-radius: 0 0 15px 15px;
   align-self: center;
   margin-bottom: 30px;
 }
@@ -52,8 +50,9 @@ main {
   display: flex;
   justify-content: center;
   padding: 10px;
-  margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   justify-self: start;
 }
 
@@ -62,25 +61,29 @@ input:focus {
 }
 
 p:focus {
-  outline: 1px solid #fdbb2d;
+  outline: 1px solid #05b1cf;
   border-radius: 15px;
 }
 
 #plus {
   width: 40px;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
   border-radius: 0px 30px 30px 0px;
   border: none;
 }
 
+#plus .MuiSvgIcon-root {
+  color: white;
+}
+
 #plus:hover {
-  background-color: #ffa500;
+  background-color: #397ef0;
 }
 
 #enter {
   height: 40px;
   border-radius: 30px 0px 0px 30px;
-  border: 2px solid #fdbb2d;
+  border: 2px solid #05b1cf;
   width: 450px;
 }
 
@@ -90,7 +93,7 @@ input {
 
 .checkedDone {
   width: 25px;
-  accent-color: #fdbb2d;
+  accent-color: #05b1cf;
 }
 
 .tasks {
@@ -99,7 +102,7 @@ input {
   justify-content: space-around;
   align-items: center;
   padding: 30px;
-  background-color: white;
+  background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 90%;
   margin-bottom: 30px;
@@ -117,7 +120,7 @@ input {
   height: 33px;
   border-radius: 50px;
   border: none;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
   margin-right: 15px;
 }
 
@@ -126,15 +129,15 @@ input {
   height: 33px;
   border-radius: 50px;
   border: none;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
 }
 
 .edit:hover {
-  background-color: #ffa500;
+  background-color: #397ef0;
 }
 
 .delete:hover {
-  background-color: #ffa500;
+  background-color: #397ef0;
 }
 
 .beide-button {
@@ -143,37 +146,9 @@ input {
   padding: 30px;
 }
 
-#save {
-  width: 100px;
-  height: 30px;
-  background-color: #fdbb2d;
-  border: none;
-  border-radius: 30px;
-  color: #1f4690;
-  font-weight: bold;
-}
-
-#save:hover {
-  background-color: #ffa500;
-}
-
-#cancel {
-  width: 100px;
-  height: 30px;
-  background-color: #fdbb2d;
-  border: none;
-  border-radius: 30px;
-  color: #1f4690;
-  font-weight: bold;
-}
-
-#cancel:hover {
-  background-color: #ffa500;
-}
-
 #clear {
   border: none;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
   border-radius: 15px;
   color: white;
   font-size: 16px;
@@ -185,7 +160,7 @@ input {
 }
 
 #clear:hover {
-  background-color: #ffa500;
+  background-color: #397ef0;
 }
 
 #messageNone {
@@ -199,15 +174,34 @@ input {
   margin-bottom: 15px;
   margin-top: -15px;
   font-size: 16px;
-  color: #fdbb2d;
+  color: #05b1cf;
   font-size: large;
 }
 
+@media only screen and (max-width: 650px) {
+  header {
+    width: 90vw;
+  }
+
+  .container {
+    width: 90vw;
+  }
+
+  #quantity-container {
+    min-width: 90vw;
+  }
+}
+
 @media only screen and (max-width: 960px) {
+  #quantity-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
   #plus {
     min-width: 35px;
   }
-
   .tasks {
     display: flex;
     flex-direction: column;
@@ -218,6 +212,10 @@ input {
   .update-buttons {
     padding: 10px;
     margin-top: 10px;
+  }
+
+  .todo-input {
+    margin-top: 5px;
   }
 
   .tasks p {
@@ -249,14 +247,8 @@ input {
     width: 80px;
   }
 
-  #quantity-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #date {
-    margin: 15px 0px 15px 0px;
+  #complited-quantity {
+    margin-top: 15px;
   }
 
   #completedBtn {
@@ -268,6 +260,51 @@ input {
   }
 }
 
+@media only screen and (max-width: 1497px) {
+  .delete {
+    margin-top: 10px;
+  }
+
+  #quantity-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #filterSelect {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  #date {
+    grid-area: date;
+    margin-top: 15px;
+  }
+
+  #complited-quantity {
+    grid-area: complited-quantity;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .filter {
+    grid-area: filter;
+  }
+
+  #task-quantity {
+    grid-area: task-quantity;
+  }
+  #quantity-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "date filter"
+      "task-quantity complited-quantity";
+  }
+}
+
 .MuiSvgIcon-root {
   color: white;
 }
@@ -276,23 +313,20 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 30px;
-  color: white;
+  margin-top: 30px;
+  color: #05b1cf;
   font-size: large;
   font-weight: bold;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: #22c1c3;
-  width: 80vw;
+  background-color: white;
+  width: 50vw;
   min-height: 60px;
-  margin-top: 30px;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   align-self: center;
-  padding: 15px;
 }
 
 #task-quantity-number {
   margin-left: 10px;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
   border-radius: 15px;
   color: white;
   padding: 0px 5px 0px 5px;
@@ -300,7 +334,7 @@ input {
 
 #complited-quantity-number {
   margin-left: 10px;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
   color: white;
   border-radius: 15px;
   padding-left: 10px;
@@ -316,24 +350,24 @@ input {
 }
 
 #completedBtn div {
-  width: 100%;
-  height: 100%;
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
-  border: 3px solid #fdbb2d;
+  border: 3px solid #05b1cf;
 }
 
 #completedBtn div:hover {
-  border: 4px solid #ffa500;
+  border: 4px solid #397ef0;
 }
 
 #completedBtn .MuiSvgIcon-root {
-  width: 100%;
-  height: 100%;
-  color: #fdbb2d;
+  width: 33px;
+  height: 33px;
+  color: #05b1cf;
 }
 
 #completedBtn .MuiSvgIcon-root:hover {
-  color: #ffa500;
+  color: #397ef0;
 }
 
 .textCompleted {
@@ -342,12 +376,12 @@ input {
 
 .textCompletedonEdit {
   border-radius: 15px;
-  border: 3px solid #fdbb2d;
+  border: 3px solid #05b1cf;
   background-color: white;
 }
 
 .tasks p {
-  color: #fdbb2d;
+  color: #05b1cf;
   font-size: 20px;
   font-weight: bold;
   word-wrap: break-word;
@@ -366,8 +400,8 @@ header .MuiSvgIcon-root {
   background-color: white;
   border-radius: 15px;
   min-height: 20px;
-  border: 3px solid #fdbb2d;
-  color: #fdbb2d;
+  border: 3px solid #05b1cf;
+  color: #05b1cf;
 }
 
 .radioBtn {
@@ -384,12 +418,12 @@ header .MuiSvgIcon-root {
 }
 
 #filterSelect:focus {
-  border: 3px solid #22c1c3;
+  border: 3px solid #397ef0;
 }
 
 .select-items div,
 #filterSelect {
   color: white;
-  background-color: #fdbb2d;
+  background-color: #05b1cf;
   cursor: pointer;
 }

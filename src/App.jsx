@@ -9,6 +9,7 @@ const LOCAL_STORAGE_KEY = "todo:savedTask";
 function App() {
   const [task, setTask] = useState([]);
   const [filteredTask, setFilteredTask] = useState("all");
+  const [message, setMessage] = useState(false);
 
   function loadSavedTasks() {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -41,6 +42,7 @@ function App() {
   function deleteTaskById(taskId) {
     const newTask = task.filter((task) => task.id !== taskId);
     setTaskAndSave(newTask);
+    setMessage(false);
   }
 
   function toggleTaskCompletedById(taskId) {
@@ -107,6 +109,8 @@ function App() {
         onEdit={toggleEditById}
         editTask={editTask}
         onFilter={onFilterValueSelected}
+        setMessage={setMessage}
+        message={message}
       />
     </>
   );
