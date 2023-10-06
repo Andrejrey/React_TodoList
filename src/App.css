@@ -103,7 +103,9 @@ input {
   align-items: center;
   padding: 30px;
   background-color: #f2f2f2;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   width: 91%;
   margin-bottom: 30px;
   border-radius: 15px;
@@ -210,6 +212,10 @@ input {
 }
 
 @media only screen and (max-width: 650px) {
+  body {
+    background-color: white;
+  }
+
   header {
     min-width: 100vw;
   }
@@ -305,7 +311,8 @@ input {
     margin-top: 10px;
     grid-area: filter;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 15px;
     margin-right: 5px;
     height: 100px;
@@ -323,14 +330,16 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 15px;
     height: 100px;
     margin-right: 5px;
   }
 
   #task-quantity {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 15px;
     height: 100px;
     margin-left: 5px;
@@ -345,7 +354,8 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     margin-left: 5px;
     height: 100px;
     border-radius: 15px;
