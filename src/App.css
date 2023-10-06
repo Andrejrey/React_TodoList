@@ -51,8 +51,8 @@ main {
   justify-content: center;
   padding: 10px;
   margin-bottom: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 12px;
+  margin-right: 12px;
   justify-self: start;
 }
 
@@ -104,7 +104,7 @@ input {
   padding: 30px;
   background-color: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 90%;
+  width: 91%;
   margin-bottom: 30px;
   border-radius: 15px;
 }
@@ -178,30 +178,68 @@ input {
   font-size: large;
 }
 
+.quantity-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "quantity-container-two";
+}
+
+.quantity-container-two {
+  grid-area: quantity-container-two;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px 15px 0 0;
+  font-size: large;
+  font-weight: bold;
+  color: #05b1cf;
+}
+
+#complited-quantity {
+  display: flex;
+  flex-direction: row;
+}
+
+#filter p {
+  display: none;
+}
+
 @media only screen and (max-width: 650px) {
   header {
-    width: 90vw;
+    min-width: 100vw;
   }
 
   .container {
-    width: 90vw;
+    min-width: 100vw;
   }
 
-  #quantity-container {
-    min-width: 90vw;
+  .quantity-container-two {
+    min-width: 100vw;
   }
 }
 
 @media only screen and (max-width: 960px) {
-  #quantity-container {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+  .container {
+    width: 70vw;
+  }
+
+  .quantity-container-two {
+    width: 70vw;
+  }
+
+  header {
+    width: 70vw;
   }
 
   #plus {
     min-width: 35px;
   }
+
   .tasks {
     display: flex;
     flex-direction: column;
@@ -212,10 +250,6 @@ input {
   .update-buttons {
     padding: 10px;
     margin-top: 10px;
-  }
-
-  .todo-input {
-    margin-top: 5px;
   }
 
   .tasks p {
@@ -247,81 +281,102 @@ input {
     width: 80px;
   }
 
-  #complited-quantity {
-    margin-top: 15px;
-  }
-
   #completedBtn {
-    margin-bottom: 15px;
-  }
-
-  #filterSelect {
     margin-bottom: 15px;
   }
 }
 
 @media only screen and (max-width: 1497px) {
-  .delete {
-    margin-top: 10px;
-  }
-
-  #quantity-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #filterSelect {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  #date {
-    grid-area: date;
-    margin-top: 15px;
-  }
-
-  #complited-quantity {
-    grid-area: complited-quantity;
-    margin-top: 15px;
-    margin-bottom: 10px;
-  }
-
-  .filter {
-    grid-area: filter;
-  }
-
-  #task-quantity {
-    grid-area: task-quantity;
-  }
-  #quantity-container {
+  .quantity-container-two {
     display: grid;
+    justify-items: legacy;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      "date filter"
-      "task-quantity complited-quantity";
+      "date task-quantity"
+      "filter complited-quantity";
+  }
+
+  #filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    grid-area: filter;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    margin-right: 5px;
+    height: 100px;
+  }
+
+  #filter p {
+    display: block;
+  }
+
+  #filterSelect {
+    margin-top: 10px;
+  }
+
+  #date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    height: 100px;
+    margin-right: 5px;
+  }
+
+  #task-quantity {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+    height: 100px;
+    margin-left: 5px;
+  }
+
+  #complited-quantity {
+    grid-area: complited-quantity;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 5px;
+    height: 100px;
+    border-radius: 15px;
+  }
+
+  #complited-quantity-number {
+    margin-top: 10px;
+    margin-right: 12px;
+    width: 104px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  #filterSelect {
+    width: 111px;
+  }
+
+  #task-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: task-quantity;
+  }
+
+  .delete {
+    margin-top: 10px;
   }
 }
 
 .MuiSvgIcon-root {
   color: white;
-}
-
-#quantity-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 30px;
-  color: #05b1cf;
-  font-size: large;
-  font-weight: bold;
-  background-color: white;
-  width: 50vw;
-  min-height: 60px;
-  border-radius: 15px 15px 0 0;
-  align-self: center;
 }
 
 #task-quantity-number {
