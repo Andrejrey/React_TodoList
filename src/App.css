@@ -429,6 +429,17 @@ input {
   color: #05b1cf;
 }
 
+#moon {
+  font-size: 24px;
+  margin-left: 4px;
+}
+
+#sun {
+  font-size: 24px;
+  margin-left: 4px;
+  color: #fdb813;
+}
+
 @media only screen and (max-width: 480px) {
   #light {
     background-color: white;
