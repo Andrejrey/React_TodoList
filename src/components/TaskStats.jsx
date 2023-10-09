@@ -22,7 +22,7 @@ export default function TaskStats({ task, onFilter, setMessage }) {
           </select>
         </div>
         <p id="task-quantity">
-          Created: <span id="task-quantity-number">{taskQuantity}</span>
+          Tasks: <span id="task-quantity-number">{taskQuantity}</span>
         </p>
         <div id="complited-quantity">
           <p>Completed:</p>
