@@ -2,7 +2,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import SaveIcon from "@mui/icons-material/Save";
-// import { useRef } from "react";
 
 export default function TodoTasks({
   task,
@@ -14,7 +13,6 @@ export default function TodoTasks({
   setTitle,
   setMessage,
 }) {
-  // const inputRef = useRef();
   function handleEditedTask() {
     setMessage(false);
     if (title === "") {
@@ -37,7 +35,6 @@ export default function TodoTasks({
           {task.done ? <CheckCircleIcon /> : <div />}
         </button>
         <p
-          // ref={inputRef}
           onInput={(event) => setTitle(event.currentTarget.textContent)}
           contentEditable={task.edit ? true : false}
           className={

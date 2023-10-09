@@ -6,34 +6,49 @@
   letter-spacing: 0.5px;
 }
 
-.update-buttons {
-  display: none;
+#light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f2f2f2;
+  width: 100vw;
+  height: 100vh;
+}
+
+#dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #212121;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: linear-gradient(
     90deg,
     rgba(5, 177, 207, 1) 0%,
     rgba(57, 126, 240, 1) 100%
   );
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 80px;
   width: 50vw;
   border-radius: 0 0 15px 15px;
 }
 
-body {
+header div {
   display: flex;
-  justify-content: center;
-  background: #f2f2f2;
+  flex-direction: row;
+  align-items: center;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
+header .MuiSvgIcon-root {
+  color: white;
+  font-size: 33px;
+  margin-left: 10px;
 }
 
 .container {
@@ -41,9 +56,184 @@ main {
   flex-direction: column;
   width: 50vw;
   background: white;
-  border-radius: 0 0 15px 15px;
+  border-radius: 15px;
   align-self: center;
   margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#dark .container {
+  background: #303030;
+}
+
+/* .quantity-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "quantity-container-two";
+} */
+
+.quantity-container-two {
+  display: grid;
+  padding: 20px;
+  justify-items: legacy;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "date task-quantity"
+    "filter complited-quantity";
+  box-shadow: none;
+  font-size: large;
+  font-weight: bold;
+  color: #05b1cf;
+  margin: 0;
+}
+
+#date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 15px;
+  height: 100px;
+  margin-right: 5px;
+}
+
+#dark #date {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #424242;
+}
+
+#task-quantity {
+  grid-area: task-quantity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 15px;
+  height: 100px;
+  margin-left: 5px;
+}
+
+#dark #task-quantity {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #424242;
+}
+
+#filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  grid-area: filter;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 15px;
+  margin-right: 5px;
+  height: 100px;
+}
+
+#dark #filter {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #424242;
+}
+
+#filterSelect {
+  border-radius: 15px;
+  color: #031926;
+  padding: 7px;
+  font-weight: bold;
+  border: none;
+  margin-left: 10px;
+}
+
+#dark #filterSelect {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #505050;
+}
+
+#complited-quantity {
+  grid-area: complited-quantity;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  margin-left: 5px;
+  height: 100px;
+  border-radius: 15px;
+}
+
+#dark #complited-quantity {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #424242;
+}
+
+#complited-quantity-number {
+  width: 104px;
+  text-align: center;
+}
+
+#dark #complited-quantity-number {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #505050;
+}
+
+#filterSelect:focus {
+  outline: none;
+}
+
+.select-items div,
+#filterSelect {
+  color: #05b1cf;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  background-color: white;
+  cursor: pointer;
+}
+
+#task-quantity-number {
+  margin-left: 10px;
+  border-radius: 50%;
+  color: #05b1cf;
+  padding: 5px 10px 5px 10px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+#dark #task-quantity-number {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #505050;
+}
+
+#complited-quantity-number {
+  margin-left: 10px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  color: #05b1cf;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
 }
 
 .todo-input {
@@ -91,24 +281,23 @@ input {
   padding-left: 15px;
 }
 
-.checkedDone {
-  width: 25px;
-  accent-color: #05b1cf;
-}
-
 .tasks {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 30px;
-  background-color: #f2f2f2;
+  background: #f2f2f2;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   width: 91%;
   margin-bottom: 30px;
   border-radius: 15px;
+}
+
+#dark .tasks {
+  background-color: #424242;
 }
 
 .tasksInput {
@@ -123,7 +312,13 @@ input {
   border-radius: 50px;
   border: none;
   background-color: #05b1cf;
-  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.edit-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .delete {
@@ -140,12 +335,6 @@ input {
 
 .delete:hover {
   background-color: #397ef0;
-}
-
-.beide-button {
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
 }
 
 #clear {
@@ -172,6 +361,7 @@ input {
 #showMessage {
   display: block;
   width: 100%;
+  padding: 0 10px 0 10px;
   text-align: center;
   margin-bottom: 15px;
   margin-top: -15px;
@@ -180,230 +370,8 @@ input {
   font-size: large;
 }
 
-.quantity-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "quantity-container-two";
-}
-
-.quantity-container-two {
-  grid-area: quantity-container-two;
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  padding: 20px;
-  border-radius: 15px 15px 0 0;
-  font-size: large;
-  font-weight: bold;
-  color: #05b1cf;
-}
-
-#complited-quantity {
-  display: flex;
-  flex-direction: row;
-}
-
-#filter p {
-  display: none;
-}
-
-@media only screen and (max-width: 650px) {
-  body {
-    background-color: white;
-  }
-
-  header {
-    min-width: 100vw;
-  }
-
-  .container {
-    min-width: 100vw;
-  }
-
-  .quantity-container-two {
-    min-width: 100vw;
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  .container {
-    width: 70vw;
-  }
-
-  .quantity-container-two {
-    width: 70vw;
-  }
-
-  header {
-    width: 70vw;
-  }
-
-  #plus {
-    min-width: 35px;
-  }
-
-  .tasks {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .update-buttons {
-    padding: 10px;
-    margin-top: 10px;
-  }
-
-  .tasks p {
-    max-width: 220px;
-    margin-bottom: 10px;
-  }
-
-  .checkedDone {
-    margin-bottom: 15px;
-  }
-
-  .edit {
-    margin-right: 40px;
-  }
-
-  #save {
-    margin-right: 5px;
-  }
-
-  #message {
-    padding: 10px;
-  }
-
-  #save {
-    width: 80px;
-  }
-
-  #cancel {
-    width: 80px;
-  }
-
-  #completedBtn {
-    margin-bottom: 15px;
-  }
-}
-
-@media only screen and (max-width: 1497px) {
-  .quantity-container-two {
-    display: grid;
-    justify-items: legacy;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "date task-quantity"
-      "filter complited-quantity";
-  }
-
-  #filter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    grid-area: filter;
-    flex-direction: column;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 15px;
-    margin-right: 5px;
-    height: 100px;
-  }
-
-  #filter p {
-    display: block;
-  }
-
-  #filterSelect {
-    margin-top: 10px;
-  }
-
-  #date {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 15px;
-    height: 100px;
-    margin-right: 5px;
-  }
-
-  #task-quantity {
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 15px;
-    height: 100px;
-    margin-left: 5px;
-  }
-
-  #complited-quantity {
-    grid-area: complited-quantity;
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-      rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    margin-left: 5px;
-    height: 100px;
-    border-radius: 15px;
-  }
-
-  #complited-quantity-number {
-    margin-top: 10px;
-    margin-right: 12px;
-    width: 104px;
-    text-align: center;
-    padding: 4px;
-  }
-
-  #filterSelect {
-    width: 111px;
-  }
-
-  #task-quantity {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-area: task-quantity;
-  }
-
-  .delete {
-    margin-top: 10px;
-  }
-}
-
 .MuiSvgIcon-root {
   color: white;
-}
-
-#task-quantity-number {
-  margin-left: 10px;
-  background-color: #05b1cf;
-  border-radius: 15px;
-  color: white;
-  padding: 0px 5px 0px 5px;
-}
-
-#complited-quantity-number {
-  margin-left: 10px;
-  background-color: #05b1cf;
-  color: white;
-  border-radius: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 #completedBtn {
@@ -419,6 +387,7 @@ input {
   height: 33px;
   border-radius: 50%;
   border: 3px solid #05b1cf;
+  background: white;
 }
 
 #completedBtn div:hover {
@@ -439,12 +408,6 @@ input {
   text-decoration: 2px line-through;
 }
 
-.textCompletedonEdit {
-  border-radius: 15px;
-  border: 3px solid #05b1cf;
-  background-color: white;
-}
-
 .tasks p {
   color: #05b1cf;
   font-size: 20px;
@@ -455,12 +418,6 @@ input {
   text-align: center;
 }
 
-header .MuiSvgIcon-root {
-  color: white;
-  font-size: 33px;
-  margin-left: 10px;
-}
-
 .onEdit {
   background-color: white;
   border-radius: 15px;
@@ -469,26 +426,182 @@ header .MuiSvgIcon-root {
   color: #05b1cf;
 }
 
-.radioBtn {
-  margin-left: 15px;
-  margin-right: 15px;
+@media only screen and (max-width: 480px) {
+  #light {
+    background-color: white;
+  }
+
+  #dark {
+    background-color: #303030;
+  }
+
+  header,
+  .container {
+    min-width: 100vw;
+  }
+
+  #filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #filterSelect {
+    margin-top: 10px;
+    padding: 7px;
+    margin-left: 0;
+  }
+
+  #complited-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #complited-quantity-number {
+    margin-top: 10px;
+    margin-right: 12px;
+    width: 104px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  .tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .tasks p {
+    width: 280px;
+  }
+
+  .delete {
+    margin-left: 30px;
+  }
+
+  .edit-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .edit {
+    margin-bottom: 0;
+  }
+
+  #completedBtn {
+    margin-bottom: 10px;
+  }
+
+  #clear {
+    margin-bottom: 0;
+  }
 }
 
-#filterSelect {
-  border-radius: 15px;
-  color: #031926;
-  padding: 6px;
-  font-weight: bold;
-  border: none;
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  #light {
+    background-color: white;
+  }
+
+  #dark {
+    background-color: #303030;
+  }
+
+  header,
+  .container {
+    width: 100vw;
+  }
+
+  #filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #filterSelect {
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 7px;
+  }
+
+  #complited-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #complited-quantity-number {
+    margin-top: 10px;
+    margin-right: 12px;
+    width: 104px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  #clear {
+    margin-bottom: 0;
+  }
+
+  .edit {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tasks p {
+    width: 280px;
+  }
 }
 
-#filterSelect:focus {
-  border: 3px solid #397ef0;
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  header,
+  .container {
+    width: 70vw;
+  }
+
+  .edit {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tasks p {
+    width: 280px;
+  }
 }
 
-.select-items div,
-#filterSelect {
-  color: white;
-  background-color: #05b1cf;
-  cursor: pointer;
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  header,
+  .container {
+    width: 60vw;
+  }
+
+  .edit {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tasks p {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1482px) {
+  header,
+  .container {
+    width: 50vw;
+  }
+
+  .edit {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tasks p {
+    width: 400px;
+  }
 }
