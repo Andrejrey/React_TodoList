@@ -34,50 +34,48 @@ export default function TodoBody({
 
   return (
     <>
-      <main>
+      <div className="container">
         <TaskStats task={task} onFilter={onFilter} setMessage={setMessage} />
-        <div className="container">
-          <form onSubmit={handleSubmit} className="todo-input">
-            <input
-              id="enter"
-              type="text"
-              value={title}
-              onChange={onChangeTitle}
-              placeholder="Type Task..."
-            ></input>
-            <button id="plus">
-              <AddIcon />
-            </button>
-          </form>
-          <div>
-            <p id={!message ? "messageNone" : "showMessage"}>
-              You need to write something in the input!
-            </p>
-          </div>
-          <div className="tasksInput">
-            {task.map(function (task) {
-              return (
-                <TodoTasks
-                  key={task.id}
-                  task={task}
-                  onComplete={onComplete}
-                  onDelete={onDelete}
-                  onEdit={onEdit}
-                  editTask={editTask}
-                  title={title}
-                  setTitle={setTitle}
-                  setMessage={setMessage}
-                />
-              );
-            })}
-          </div>
-          {task.length > 1 && (
-            <button onClick={clearAll} id="clear">
-              Clear All
-            </button>
-          )}
+        <form onSubmit={handleSubmit} className="todo-input">
+          <input
+            id="enter"
+            type="text"
+            value={title}
+            onChange={onChangeTitle}
+            placeholder="Type Task..."
+          ></input>
+          <button id="plus">
+            <AddIcon />
+          </button>
+        </form>
+        <div>
+          <p id={!message ? "messageNone" : "showMessage"}>
+            You need to write something in the input!
+          </p>
         </div>
-      </main>
+        <div className="tasksInput">
+          {task.map(function (task) {
+            return (
+              <TodoTasks
+                key={task.id}
+                task={task}
+                onComplete={onComplete}
+                onDelete={onDelete}
+                onEdit={onEdit}
+                editTask={editTask}
+                title={title}
+                setTitle={setTitle}
+                setMessage={setMessage}
+              />
+            );
+          })}
+        </div>
+        {task.length > 1 && (
+          <button onClick={clearAll} id="clear">
+            Clear All
+          </button>
+        )}
+      </div>
     </>
   );
 }

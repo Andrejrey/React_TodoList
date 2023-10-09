@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from "react";
-
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import TodoBody from "./components/TodoBody";
@@ -10,6 +9,7 @@ function App() {
   const [task, setTask] = useState([]);
   const [filteredTask, setFilteredTask] = useState("all");
   const [message, setMessage] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   function loadSavedTasks() {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -97,9 +97,13 @@ function App() {
     setFilteredTask(filterValue);
   }
 
+  function toggleTheme() {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  }
+
   return (
-    <>
-      <Header />
+    <div id={theme}>
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <TodoBody
         addTask={addTask}
         task={filteredTaskArray}
@@ -112,7 +116,7 @@ function App() {
         setMessage={setMessage}
         message={message}
       />
-    </>
+    </div>
   );
 }
 
