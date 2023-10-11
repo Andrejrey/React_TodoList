@@ -42,7 +42,7 @@ export default function TodoBody({
             type="text"
             value={title}
             onChange={onChangeTitle}
-            placeholder="Type Task..."
+            placeholder="Type task..."
           ></input>
           <button id="plus">
             <AddIcon />
@@ -50,7 +50,7 @@ export default function TodoBody({
         </form>
         <div>
           <p id={!message ? "messageNone" : "showMessage"}>
-            You need to write something in the input!
+            You need to write something!
           </p>
         </div>
         <div className="tasksInput">
