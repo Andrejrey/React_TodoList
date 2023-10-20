@@ -9,7 +9,10 @@ function App() {
   const [task, setTask] = useState([]);
   const [filteredTask, setFilteredTask] = useState("all");
   const [message, setMessage] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    const initialTheme = localStorage.getItem("theme");
+    return initialTheme ? initialTheme : "light";
+  });
 
   function loadSavedTasks() {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -97,9 +100,24 @@ function App() {
     setFilteredTask(filterValue);
   }
 
-  function toggleTheme() {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  function getThemeFromLocalStorage() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
   }
+
+  function toggleTheme() {
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
+  }
+
+  useEffect(() => {
+    getThemeFromLocalStorage();
+  }, [theme]);
 
   return (
     <div id={theme}>
