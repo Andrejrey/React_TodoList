@@ -115,6 +115,7 @@ function App() {
         onFilter={onFilterValueSelected}
         setMessage={setMessage}
         message={message}
+        filteredTask={filteredTask}
       />
     </div>
   );

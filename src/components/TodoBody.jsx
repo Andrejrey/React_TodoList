@@ -2,6 +2,7 @@ import { useState } from "react";
 import TodoTasks from "./TodoTasks";
 import AddIcon from "@mui/icons-material/Add";
 import TaskStats from "./TaskStats";
+import TodoMessages from "./TodoMessages";
 
 export default function TodoBody({
   addTask,
@@ -14,9 +15,9 @@ export default function TodoBody({
   onFilter,
   setMessage,
   message,
+  filteredTask,
 }) {
   const [title, setTitle] = useState("");
-
   function handleSubmit(event) {
     event.preventDefault();
     if (title === "") {
@@ -48,11 +49,11 @@ export default function TodoBody({
             <AddIcon />
           </button>
         </form>
-        <div>
-          <p id={!message ? "messageNone" : "showMessage"}>
-            You need to write something!
-          </p>
-        </div>
+        <TodoMessages
+          message={message}
+          filteredTask={filteredTask}
+          task={task}
+        />
         <div className="tasksInput">
           {task.map(function (task) {
             return (
