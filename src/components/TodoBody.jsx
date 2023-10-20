@@ -18,9 +18,10 @@ export default function TodoBody({
   filteredTask,
 }) {
   const [title, setTitle] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
-    if (title === "") {
+    if (title === "" || !title.replace(/\s/g, "").length) {
       setMessage(true);
     } else {
       setMessage(false);
