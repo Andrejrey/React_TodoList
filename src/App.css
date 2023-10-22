@@ -205,7 +205,7 @@ header .MuiSvgIcon-root {
 .select-items div,
 #filterSelect {
   color: #05b1cf;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+  -webkit-box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   background-color: white;
   cursor: pointer;
