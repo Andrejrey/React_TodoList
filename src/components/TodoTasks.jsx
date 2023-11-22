@@ -39,12 +39,20 @@ export default function TodoTasks({
     setMessage(false);
   }
 
+  let date = new Date();
+  date = date.toString().split(" ");
+
   return (
     <>
       <div className="tasks">
-        <button id="completedBtn" onClick={() => onComplete(task.id)}>
-          {task.done ? <CheckCircleIcon /> : <div />}
-        </button>
+        <div className="done-with-date-container">
+          <button id="completedBtn" onClick={() => onComplete(task.id)}>
+            {task.done ? <CheckCircleIcon /> : <div />}
+          </button>
+          <p className="task-date">
+            {date[1] + " " + date[2] + ", " + date[3]}
+          </p>
+        </div>
         <p
           ref={inputRef}
           onInput={(event) => setTitle(event.currentTarget.textContent)}
