@@ -314,7 +314,7 @@ input {
 
 .task-date {
   margin-left: 15px;
-  max-width: 140px;
+  max-width: 160px;
 }
 
 #dark .done-with-date-container {
@@ -529,6 +529,7 @@ input {
 
   .delete {
     margin-left: 30px;
+    margin-top: 0;
   }
 
   .edit {
