@@ -51,6 +51,16 @@ header .MuiSvgIcon-root {
   margin-left: 10px;
 }
 
+.react-switch-bg {
+  box-shadow: rgb(204, 219, 232) 2px 2px 2px 2px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+#dark .react-switch-bg {
+  box-shadow: rgb(62, 62, 62) 2px 2px 2px 2px inset,
+    rgba(73, 73, 73, 0.5) -3px -3px 6px 1px inset;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -65,14 +75,6 @@ header .MuiSvgIcon-root {
 #dark .container {
   background: #303030;
 }
-
-/* .quantity-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "quantity-container-two";
-} */
 
 .quantity-container-two {
   display: grid;
@@ -299,6 +301,29 @@ input {
   border-radius: 15px;
 }
 
+.done-with-date-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 15px;
+  height: 45px;
+}
+
+.task-date {
+  margin-left: 15px;
+  max-width: 140px;
+}
+
+#dark .done-with-date-container {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #505050;
+}
+
 #dark .tasks {
   background-color: #424242;
 }
@@ -330,6 +355,7 @@ input {
   border-radius: 50px;
   border: none;
   background-color: #05b1cf;
+  margin-top: 10px;
 }
 
 .edit:hover {
@@ -383,6 +409,7 @@ input {
   background: none;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 #completedBtn div {
@@ -417,7 +444,7 @@ input {
   font-weight: bold;
   word-wrap: break-word;
   padding: 10px;
-  width: 500px;
+  width: 700px;
   text-align: center;
 }
 
@@ -446,7 +473,7 @@ input {
   color: #fdb813;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 705px) {
   #light {
     background-color: white;
   }
@@ -497,10 +524,15 @@ input {
 
   .tasks p {
     width: 280px;
+    margin: 15px;
   }
 
   .delete {
     margin-left: 30px;
+  }
+
+  .edit {
+    margin-bottom: 0;
   }
 
   .edit-buttons {
@@ -508,14 +540,7 @@ input {
     flex-direction: row;
     align-items: center;
     margin-top: 10px;
-  }
-
-  .edit {
-    margin-bottom: 0;
-  }
-
-  #completedBtn {
-    margin-bottom: 10px;
+    border-radius: 15px;
   }
 
   #clear {
@@ -523,7 +548,7 @@ input {
   }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 706px) and (max-width: 905px) {
   #light {
     background-color: white;
   }
@@ -578,7 +603,7 @@ input {
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 906px) and (max-width: 1150px) {
   header,
   .container {
     width: 70vw;
@@ -590,11 +615,11 @@ input {
   }
 
   .tasks p {
-    width: 280px;
+    width: 250px;
   }
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+@media only screen and (min-width: 1151px) and (max-width: 1430px) {
   header,
   .container {
     width: 60vw;
@@ -606,11 +631,11 @@ input {
   }
 
   .tasks p {
-    width: 400px;
+    width: 300px;
   }
 }
 
-@media only screen and (min-width: 1201px) and (max-width: 1482px) {
+@media only screen and (min-width: 1431px) and (max-width: 1600px) {
   header,
   .container {
     width: 50vw;
@@ -622,6 +647,18 @@ input {
   }
 
   .tasks p {
+    width: 320px;
+  }
+}
+
+@media only screen and (min-width: 1601px) and (max-width: 1820px) {
+  .tasks p {
     width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1821px) and (max-width: 2310px) {
+  .tasks p {
+    width: 500px;
   }
 }
