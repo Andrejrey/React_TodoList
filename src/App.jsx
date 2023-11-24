@@ -14,6 +14,10 @@ function App() {
     return initialTheme ? initialTheme : "light";
   });
 
+  let date = new Date();
+  date = date.toString().split(" ");
+  const sortedDate = date[1] + " " + date[2] + ", " + date[3];
+
   function loadSavedTasks() {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (saved) {
@@ -35,6 +39,7 @@ function App() {
       ...task,
       {
         id: crypto.randomUUID(),
+        date: sortedDate,
         title: taskTitle,
         done: false,
         edit: false,
